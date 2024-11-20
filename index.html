@@ -4,6 +4,7 @@
         <link rel="stylesheet" href="./styles.css">
         
     </head> 
+	<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
     <body>
         <div class="container">
             <div >
@@ -17,9 +18,27 @@
                 <button class="btn" id = "yesButton" onclick="nextPage()">Yes</button>
                 <button class="btn" id="noButton" onmouseover="moveButton()" onclick="moveButton()">No</button>
                 <script>
-                    function nextPage() {
-                        window.location.href = "yes.html";
-                    }
+                    (function() {
+						emailjs.init("380Tu7AGy0pUsteue"); // Replace with your EmailJS public key
+				})();
+
+				function nextPage() {
+            // Email notification parameters
+            const templateParams = {
+                to_name: "Brian Calija", // Replace with your name
+                message: "She clicked YES! 🎉",
+            };
+
+            // Send email using EmailJS
+            emailjs.send("service_uyvdqc9", "template_h3vmphp", templateParams)
+                .then(function(response) {
+                    alert("Email sent successfully!");
+                    window.location.href = "yes.html"; // Redirect after success
+                }, function(error) {
+                    alert("Failed to send email. Please try again.");
+                    console.error("EmailJS Error:", error);
+                });
+			}
                     
                     function moveButton() {
                         var x = Math.random() * (window.innerWidth - document.getElementById('noButton').offsetWidth) - 85;
