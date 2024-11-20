@@ -8,8 +8,10 @@
     <body>
         <div class="container">
             <div >
-                <h1 class = "header_text">Do you wanna go out with me?</h1>
-                <h1 class = "header_text">Are you free tommorow?</h1>
+                <h1 class = "header_text">I'm Sorry 💔</h1>
+                <h1 class = "header_text">I made a mistake, and I deeply regret it. I hope you can forgive me.</h1>
+				<h1 class = "header_text"> You mean the world to me </h1>
+				<h1 class = "header_text">Sorry Na po 💔, Bati Na Tayo?  </h1>
             </div>
             <div class="gif_container">
                 <img src="https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExcDdtZ2JiZDR0a3lvMWF4OG8yc3p6Ymdvd3g2d245amdveDhyYmx6eCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/cLS1cfxvGOPVpf9g3y/giphy.gif" alt="Cute animated illustration">
@@ -25,14 +27,14 @@
 				function nextPage() {
             // Email notification parameters
             const templateParams = {
-                to_name: "Brian Calija", // Replace with your name
+                to_name: "Brian Calija",
+				from_name: "Alpha",// Replace with your name
                 message: "She clicked YES! 🎉",
             };
 
             // Send email using EmailJS
-            emailjs.send("service_uyvdqc9", "template_h3vmphp", templateParams)
+            emailjs.send("service_uyvdqc9", "template_gqh1yhj", templateParams)
                 .then(function(response) {
-                    alert("Email sent successfully!");
                     window.location.href = "yes.html"; // Redirect after success
                 }, function(error) {
                     alert("Failed to send email. Please try again.");
